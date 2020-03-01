@@ -19,5 +19,6 @@ wget ftp.sra.ebi.ac.uk/vol1/run/ERR355/ERR3559063/R7.bam
 ```
 wget ftp.sra.ebi.ac.uk/vol1/run/ERR355/ERR3559063/R7.bam.bai
 ```
-All links for ```.bam``` and ```.bam.bai``` can be found in [PRJEB32566.txt](data/PRJEB32566.txt).
+
+Links for all ```*.bam``` and ```*.bam.bai``` files can be found in [PRJEB32566.txt](data/PRJEB32566.txt). 
 
