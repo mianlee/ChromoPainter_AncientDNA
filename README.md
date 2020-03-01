@@ -11,7 +11,7 @@ The author deposited their raw sequencing data at European Nucleotide Archive (E
 
 
 
-The indexed bam files (the bam file ```.bam``` and the index file of the bam ```.bam.bai```) can be download for each individuals from [PRJEB32566](https://www.ebi.ac.uk/ena/data/view/PRJEB32566) using the following commands in your terminal at designated directory, for example：
+The indexed bam files (the bam file ```*.bam``` and the index file of the bam ```*.bam.bai```) can be download for each individuals from [PRJEB32566](https://www.ebi.ac.uk/ena/data/view/PRJEB32566) using the following commands in your terminal at designated directory, for example：
 
 ```
 wget ftp.sra.ebi.ac.uk/vol1/run/ERR355/ERR3559063/R7.bam.bai
