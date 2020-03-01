@@ -8,3 +8,13 @@ Here, I am trying to repeat their ChromoPainter analysis, and we can use this me
 
 
 The author deposited their raw sequencing data at European Nucleotide Archive (ENA) with accession [no.PRJEB32566](https://www.ebi.ac.uk/ena/data/view/PRJEB32566). Samples in this repository include 127 from Rome and Central Italy, as well as 7 from Sardinia (Bronze/Copper Age) that were not reported in the study. They performed whole-genome sequencing to a median depth of 1.05× genome-wide coverage (range 0.4 to 4.0×, [TableS2](data/aay6826_Tables_S1_to_S4.xlsx)).
+
+
+
+The indexed bam files (the bam file ```.bam``` and the index file of the bam ```.bam.bai```) can be download for each individuals from PRJEB32566](https://www.ebi.ac.uk/ena/data/view/PRJEB32566) using the following commands in your terminal at designated directory, for example：
+
+```
+wget ftp.sra.ebi.ac.uk/vol1/run/ERR355/ERR3559063/R7.bam.bai
+
+wget ftp.sra.ebi.ac.uk/vol1/run/ERR355/ERR3559063/R7.bam
+```
