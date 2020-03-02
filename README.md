@@ -63,7 +63,7 @@ You will get ```ucsc.hg19.fasta.fai``` file.
 
 **Creating the fasta sequence dictionary file for your reference**
 
-Using CreateSequenceDictionary.jar from Picard to create a .dict file from the rCRS.fa file.
+Using ```CreateSequenceDictionary``` tool from ```Picard``` to create a ```.dict``` file for the ```ucsc.hg19.fasta``` file.
 
 ```
 java -jar picard.jar CreateSequenceDictionary R=ucsc.hg19.fasta O=ucsc.hg19.dict 
