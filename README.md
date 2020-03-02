@@ -74,6 +74,9 @@ java -jar picard.jar CreateSequenceDictionary R=ucsc.hg19.fasta O=ucsc.hg19.dict
 
 **Note:**
 
+On our server, we have ```samtools``` installed, and you just need to download ```picart``` and you are good to go. Just in case if you want to run it on your local computer, see belows:
+
+
 1. How to download and install [Samtools](http://www.htslib.org/).
 2. Install Picart
 
@@ -83,13 +86,17 @@ Download [Picart](https://broadinstitute.github.io/picard/). Note that it is not
 
 However, you can set up a shortcut called an "environment variable" in your shell profile configuration to make this easier. The idea is that you create a variable that tells your system where to find a given jar, like this:
 
-```export picard=/home/mianlee/Desktop/Software/gatk-4.1.2.0/picard.jar
+```
+export picard=/home/mianlee/Desktop/Software/gatk-4.1.2.0/picard.jar
 
 #Ubuntu 16.04
+
 ```
 So then when you want to run a Picard tool, you just need to call the jar by its shortcut, like this:
 
+```
 java -jar $picard <Toolname> [options]
+```
 
 
 
