@@ -51,3 +51,24 @@ Once the final FASTA file is produced, all intermediate files and directory are 
 
 
 ## Genome Analysis Toolkit's (GATK's)
+
+
+In oder to obtained the genotypes and likelihood scores for SNPs, the authors chose to use GATK ```UnifiedGenotyper```. Here, I quoted "We used ```UnifiedGenotyper``` instead of more recent genotype callers, such as ```HaplotypeCaller```, because it has the option to output genotype likelihood scores."
+
+After I did some researches and found out the ```UnifiedGenotyper```(GATK version 3.XXX, the old version) has been replaced by ```HaplotypeCaller```(GATK version 4.XXXX,) which is a much better tool. And It also took me a while to find the program [**```GenomeAnalysisTK.jar```**](data/GenomeAnalysisTK.jar) since it was being discontinued for two or three years, click the link to download the ```GenomeAnalysisTK.jar```(This is from GATK version 3.8.1).
+
+
+**Note:**
+
+Some links about this issue: 
+
+1. [Legacy GATK code](https://gatk.broadinstitute.org/hc/en-us/articles/360035889571?id=4022). Also known as "Classic GATK", this covers major versions 1 through 3.
+
+2. [How to donwload GATK version 3.8 forum](https://gatkforums.broadinstitute.org/gatk/discussion/11188/gatk-version-3-8-download).
+
+3. [GATK version 1.0 to 3.8 downloads](https://console.cloud.google.com/storage/browser/gatk-software/package-archive/gatk/), you may need a google account to access google cloud platform.
+
+
+
+
+
