@@ -68,7 +68,6 @@ Using ```CreateSequenceDictionary``` tool from ```Picard``` to create a ```.dict
 ```
 java -jar picard.jar CreateSequenceDictionary R=ucsc.hg19.fasta O=ucsc.hg19.dict 
 
-# $picard, see note below
 ```
 
 java -jar picard.jar CreateSequenceDictionary R=ucsc.hg19.fasta O=ucsc.hg19.dict 
