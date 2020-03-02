@@ -27,12 +27,23 @@ Links for all ```*.bam``` and ```*.bam.bai``` files can be found in [PRJEB32566.
 ## Download the human reference: H.sapiens,UCSC hg19
 
 
-The [hg19.build.sh](data/hg19.build.sh) script downloads sequences of chromosomes 1-22, X and Y from [UCSC](http://hgdownload.cse.ucsc.edu/goldenpath/hg19/chromosomes/)(University of California, Santa Cruz) and combines them in order.
+The [hg19.build.sh](data/hg19.build.sh) script downloads sequences of chromosomes 1-22, X and Y from [UCSC directory](http://hgdownload.cse.ucsc.edu/goldenpath/hg19/chromosomes/) (University of California, Santa Cruz) and combines them in order.
+
+```
+#How to run
+
+mkdir ucsc_hg19_fasta  #creat a new directory
+cd ucsc_hg19_fasta     #go to the new directory
+
+./hg19.build.sh ucsc.hg19.fasta
+
+or
+
+bash hg19.build.sh ucsc.hg19.fasta
+````
+
+Once the final FASTA file is produced, all intermediate files and directory are removed. Because the scripts creates temporary files, please run it in a freshly created directory (or ucsc_hg19_fasta).
 
 
 
-How to run
-cd ucsc-hg19-fasta
-./build.sh ucsc.hg19.fasta
-Once the final FASTA file is produced, all intermediate files and directory are removed. Because the scripts creates temporary files, please run it in a freshly created directory (or ucsc-hg19-fasta).
-
+Reference: [Build ucsc.hg19.fasta](https://github.com/creggian/ucsc-hg19-fasta).
