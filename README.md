@@ -78,9 +78,9 @@ On our server, we have ```samtools``` installed, and you just need to download `
 
 
 1. How to download and install [Samtools](http://www.htslib.org/).
-2. Install Picart
+2. Download and install Picart
 
-Download [Picart](https://broadinstitute.github.io/picard/). Note that it is not possible to add jar files to your path to make the tools available on the command line; you have to specify the full path to the jar file in your java command, which would look like this:
+You can download [Picart](https://broadinstitute.github.io/picard/). Note that it is not possible to add jar files to your path to make the tools available on the command line; you have to specify the full path to the jar file in your java command, which would look like this:
 
 ```java -jar ~/my_tools/jars/picard.jar <Toolname> [options]```
 
