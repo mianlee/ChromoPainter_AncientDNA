@@ -160,11 +160,10 @@ The following parameters were used:
   
 We used UnifiedGenotyper instead of more recent genotype callers, such as HaplotypeCaller, because it has the option to output genotype likelihood scores. The likelihood scores model some of the uncertainty of the genotype due to the low coverage of the study samples, making them the preferred input (as opposed to called genotypes) for imputation."
 
-I also added ```-glm``` or ```--genotype_likelihoods_model```for  <genotype_likelihoods_model> .
+I also added ```-glm``` or ```--genotype_likelihoods_model```for  <genotype_likelihoods_model> as the paper mentioned. This is the model that the program will use to calculate the genotype likelihoods. By default, it is set to ```SNP```, but it can also be set to ```INDEL``` or ```BOTH```. If set to ```BOTH```, both SNPs and Indels will be called in the same run and be output to the same variants file.
 
 
 ```
-
 Java -jar GenomeAnalysisTK -T UnifiedGenotyper \
      --genotype_likelihoods_model \
      --min_base_quality_score 30 \
