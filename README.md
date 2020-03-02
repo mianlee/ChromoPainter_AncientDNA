@@ -138,8 +138,9 @@ Because ```GenomeAnalysisTK.jar``` has different version, it is better to type t
 java -jar GenomeAnalysisTK.jar -T UnifiedGenotyper --help
 ```
 
-Here is the what parameters the paper used:
+In the paper, the author didn't specify which version they used.
 
+Here is the what parameters the paper used:
 
 "First, genotypes and likelihood scores were obtained using GATK UnifiedGenotyper for variants at >0.01 minor allele frequency (MAF) in the 1000 Genomes global reference panel. 
 
@@ -151,11 +152,11 @@ The following parameters were used:
 
 --allSitePLs 
 
---alleles <reference_panel>
+--alleles (reference_panel)
 
 --genotyping_mode GENOYTPE_GIVEN_ALLELES 
 
--R <hg19 reference fasta>. 
+-R (hg19 reference fasta)
   
 We used UnifiedGenotyper instead of more recent genotype callers, such as HaplotypeCaller, because it has the option to output genotype likelihood scores. The likelihood scores model some of the uncertainty of the genotype due to the low coverage of the study samples, making them the preferred input (as opposed to called genotypes) for imputation."
 
