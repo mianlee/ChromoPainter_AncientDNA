@@ -58,7 +58,7 @@ Once the final FASTA file is produced, all intermediate files and directory are 
 samtools faidx ucsc.hg19.fasta
 ```
 
-You will get ```ucsc.hg19.fasta.fai```
+You will get ```ucsc.hg19.fasta.fai``` file.
 
 
 **Creating the fasta sequence dictionary file for your reference**
