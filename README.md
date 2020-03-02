@@ -54,7 +54,9 @@ Once the final FASTA file is produced, all intermediate files and directory are 
 
 **Indexing ```ucsc.hg19.fasta```  using samtools:**
 
-```samtools faidx ucsc.hg19.fasta```
+```
+samtools faidx ucsc.hg19.fasta
+```
 
 You will get ```ucsc.hg19.fasta.fai```
 
