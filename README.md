@@ -49,6 +49,50 @@ Once the final FASTA file is produced, all intermediate files and directory are 
 **Reference:** [Build ucsc.hg19.fasta](https://github.com/creggian/ucsc-hg19-fasta).
 
 
+## Prepare the human reference
+
+
+**Indexing ```ucsc.hg19.fasta```  using samtools:**
+
+```samtools faidx ucsc.hg19.fasta```
+
+You will get ```ucsc.hg19.fasta.fai```
+
+
+**Creating the fasta sequence dictionary file for your reference**
+
+Using CreateSequenceDictionary.jar from Picard to create a .dict file from the rCRS.fa file.
+
+```
+java -jar picard.jar CreateSequenceDictionary R=ucsc.hg19.fasta O=ucsc.hg19.dict 
+
+# $picard, see note below
+```
+
+java -jar picard.jar CreateSequenceDictionary R=ucsc.hg19.fasta O=ucsc.hg19.dict 
+
+**Note:**
+
+1. How to download and install [Samtools](http://www.htslib.org/).
+2. Install Picart
+
+Download [Picart](https://broadinstitute.github.io/picard/). Note that it is not possible to add jar files to your path to make the tools available on the command line; you have to specify the full path to the jar file in your java command, which would look like this:
+
+```java -jar ~/my_tools/jars/picard.jar <Toolname> [options]```
+
+However, you can set up a shortcut called an "environment variable" in your shell profile configuration to make this easier. The idea is that you create a variable that tells your system where to find a given jar, like this:
+
+```export picard=/home/mianlee/Desktop/Software/gatk-4.1.2.0/picard.jar
+
+#Ubuntu 16.04
+```
+So then when you want to run a Picard tool, you just need to call the jar by its shortcut, like this:
+
+java -jar $picard <Toolname> [options]
+
+
+
+
 
 ## Genome Analysis Toolkit's (GATK's)
 
