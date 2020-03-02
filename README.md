@@ -55,7 +55,7 @@ Once the final FASTA file is produced, all intermediate files and directory are 
 
 In oder to obtained the genotypes and likelihood scores for SNPs, the authors chose to use GATK ```UnifiedGenotyper```. Here, I quoted "We used ```UnifiedGenotyper``` instead of more recent genotype callers, such as ```HaplotypeCaller```, because it has the option to output genotype likelihood scores."
 
-After I did some researches and found out the ```UnifiedGenotyper```(GATK version 3.XXX, the old version) has been replaced by ```HaplotypeCaller```(GATK version 4.XXXX,) which is a much better tool. And It also took me a while to find the program [**```GenomeAnalysisTK.jar```**](data/GenomeAnalysisTK.jar) since it was being discontinued for two or three years, click the link to download the ```GenomeAnalysisTK.jar```(This is from GATK version 3.8.1).
+After I did some researches and found out the ```UnifiedGenotyper```(GATK version 3.XXX, the old version) has been replaced by ```HaplotypeCaller```(GATK version 4.XXX), which is a much better tool. And It also took me a while to find the program [**```GenomeAnalysisTK.jar```**](data/GenomeAnalysisTK.jar) since it was being discontinued for two or three years, click the link to download the ```GenomeAnalysisTK.jar```(This is from GATK version 3.8.1).
 
 
 **Note:**
