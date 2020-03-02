@@ -35,42 +35,49 @@ The [hg19.build.sh](data/hg19.build.sh) script downloads sequences of chromosome
 mkdir ucsc_hg19_fasta  #creat a new directory
 cd ucsc_hg19_fasta     #go to the new directory
 
-./hg19.build.sh ucsc.hg19.fasta
+./hg19.build.sh hg19.fasta
 
 or
 
-bash hg19.build.sh ucsc.hg19.fasta
+bash hg19.build.sh hg19.fasta
 ````
 
 Once the final FASTA file is produced, all intermediate files and directory are removed. Because the scripts creates temporary files, please run it in a freshly created directory (or ucsc_hg19_fasta).
 
 
 
-**Reference:** [Build ucsc.hg19.fasta](https://github.com/creggian/ucsc-hg19-fasta).
+**Reference:** [Build hg19.fasta](https://github.com/creggian/ucsc-hg19-fasta).
 
 
-## Prepare the human reference
+## Prepare the FASTA file to use as reference (hg19)
 
 
-**Indexing ```ucsc.hg19.fasta```  using samtools:**
+**Why these steps are necessary**
+
+The GATK uses two files to access and safety check access to the reference files: a ```.dict``` dictionary of the contig names and sizes and a ```.fai``` fasta index file to allow efficient random access to the reference bases. You have to generate these files in order to be able to use a Fasta file as reference.
+
+
+[How can I prepare a FASTA file to use as reference?](https://gatkforums.broadinstitute.org/gatk/discussion/1601/how-can-i-prepare-a-fasta-file-to-use-as-reference)
+
+
+
+**Indexing ```hg19.fasta```  using samtools:**
 
 ```
-samtools faidx ucsc.hg19.fasta
+samtools faidx hg19.fasta
 ```
 
-You will get ```ucsc.hg19.fasta.fai``` file.
+You will get ```hg19.fasta.fai``` file.
 
 
 **Creating the fasta sequence dictionary file for your reference**
 
-Using ```CreateSequenceDictionary``` tool from ```Picard``` to create a ```.dict``` file for the ```ucsc.hg19.fasta``` file.
+Using ```CreateSequenceDictionary``` tool from ```Picard``` to create a ```.dict``` file for the ```hg19.fasta``` file.
 
 ```
-java -jar picard.jar CreateSequenceDictionary R=ucsc.hg19.fasta O=ucsc.hg19.dict 
+java -jar picard.jar CreateSequenceDictionary R=hg19.fasta O=hg19.dict 
 
 ```
-
-java -jar picard.jar CreateSequenceDictionary R=ucsc.hg19.fasta O=ucsc.hg19.dict 
 
 **Note:**
 
