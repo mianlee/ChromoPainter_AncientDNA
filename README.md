@@ -76,8 +76,8 @@ Using ```CreateSequenceDictionary``` tool from ```Picard``` to create a ```.dict
 
 ```
 java -jar picard.jar CreateSequenceDictionary R=hg19.fasta O=hg19.dict 
-
 ```
+You will get ```hg19.dict``` file.
 
 **Note:**
 
