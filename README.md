@@ -47,3 +47,7 @@ Once the final FASTA file is produced, all intermediate files and directory are 
 
 
 **Reference:** [Build ucsc.hg19.fasta](https://github.com/creggian/ucsc-hg19-fasta).
+
+
+
+## Genome Analysis Toolkit's (GATK's)
