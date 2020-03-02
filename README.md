@@ -130,4 +130,45 @@ Some links about this issue:
 
 
 
+## Running UnifiedGenotyper
 
+Because ```GenomeAnalysisTK.jar``` has different version, it is better to type the following command to see  Arguments for ```UnifiedGenotyper```.
+
+```
+java -jar GenomeAnalysisTK.jar -T UnifiedGenotyper --help
+```
+
+Here is the what parameters the paper used:
+
+
+"First, genotypes and likelihood scores were obtained using GATK UnifiedGenotyper for variants at >0.01 minor allele frequency (MAF) in the 1000 Genomes global reference panel. 
+
+The following parameters were used: 
+--min_base_quality_score 30 
+--output_mode EMIT_ALL_SITES 
+--allSitePLs 
+--alleles <reference_panel> 
+--genotyping_mode GENOYTPE_GIVEN_ALLELES 
+-R <hg19 reference fasta>. 
+  
+We used UnifiedGenotyper instead of more recent genotype callers, such as HaplotypeCaller, because it has the option to output genotype likelihood scores. The likelihood scores model some of the uncertainty of the genotype due to the low coverage of the study samples, making them the preferred input (as opposed to called genotypes) for imputation."
+
+I also added ```-glm``` or ```--genotype_likelihoods_model```for  <genotype_likelihoods_model> .
+
+
+```
+
+Java -jar GenomeAnalysisTK -T UnifiedGenotyper \
+     --genotype_likelihoods_model \
+     --min_base_quality_score 30 \
+     --allSitePLs \
+     --alleles <reference_panel> \
+     --genotyping_mode GENOYTPE_GIVEN_ALLELES \
+     --out_mode EMIT_ALL_SITES \
+     -R hg19.fasta \
+     -I input.bam \
+     -o output.vcs 
+
+```
+
+"-Xmx4g" Specify the maximum size, in bytes, of the memory allocation pool. So, in simple words, you are setting Java heap memory to a maximum of 4G from the available memory, not more
