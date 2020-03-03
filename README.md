@@ -423,10 +423,10 @@ java -jar GenomeAnalysisTK.jar -T UnifiedGenotyper \
      --genotype_likelihoods_model SNP \
      --min_base_quality_score 30 \
      --allSitePLs \
-     --alleles dbsnp_138.b37.vcf \
+     --alleles 1000G_phase1.snps.high_confidence.b37.vcf \
      --genotyping_mode GENOTYPE_GIVEN_ALLELES \
      --output_mode EMIT_ALL_SITES \
-     -R 1000G_phase1.snps.high_confidence.b37.vcf \
+     -R human_g1k_v37.fasta \
      -I R115.bam \
      -o R115.vcf 
 
