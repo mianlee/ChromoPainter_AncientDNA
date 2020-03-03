@@ -118,9 +118,9 @@ gunzip XXXX.gz
 ```
 
 
-**Note:**
+**How do you do the downloading**
 
-1. FTP Server Access
+**1. FTP Server Access**
 
 To access the bundle on the FTP server, use the following login credentials in your favorite FTP client:
 ```
@@ -137,7 +137,7 @@ I tried their ways mentioned in [Resource Bundle](https://gatk.broadinstitute.or
 
 
 
-2. ```lftp``` tool
+**2. ```lftp``` tool**
 
 If the first method doesn't work for you or you need to download those data onto your server, you can use the method below and aftet testing, it worked perfect for me.
 
