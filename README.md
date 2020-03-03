@@ -134,10 +134,50 @@ To access the bundle on the FTP server, use the following login credentials in y
 If you use your browser as FTP client, make sure to include the login information in the address, otherwise you will access the general Broad Institute FTP instead of our team FTP. This should work as a direct link:
 ftp://gsapubftp-anonymous@ftp.broadinstitute.org/bundle/
 
-I tried their ways mentioned in [Resource Bundle](https://gatk.broadinstitute.org/hc/en-us/articles/360036212652-Resource-Bundle) above from my web brower to download the reference files, it didn't work for me and kept giving me "This site can’t be reached" error (MacBook Pro + Chrome). I don't know why this is happening or maybe the VPN issue since I was in China. But, at least you can try them first.
+I tried their ways mentioned in [Resource Bundle](https://gatk.broadinstitute.org/hc/en-us/articles/360036212652-Resource-Bundle) above from my web brower to download the reference files, it didn't work for me and kept giving me "This site can’t be reached" error (MacBook Pro + Chrome). I don't know why this is happening or maybe the VPN issue since I was in China. But, at least you can try them first. If it worked, you would see the below:
+
+![](data/bundle_ScreenShot.png)
+
+
 
 2. 
 
+If the first method doesn't work for you or you need to download those data onto your server, you can use the method below and aftet testing, it worked perfect for me.
+
+Using ```lftp``` tool to visit and download reference data from ```ftp```. If you don't have ```lftp``` command installed on your server or local computer, you need to intall it first. After installation, enter the following command in your terminal:
+
+```
+lftp ftp://gsapubftp-anonymous@ftp.broadinstitute.org/bundle/
+
+# There is no password, just hit the enter key
+# gsapubftp-anonymous is the user name, @ftp.broadinstitute.org/bundle/ is the address of the GATK server
+```
+If you connected to the server, you will see something like below. You can use ```cd``` and ```ls``` command to navigate those files and folders.
+
+![](data/Boundle_terminal)
+
+You can use **```get```** command to download the file you need. Then you will get e.g. ```ucsc.hg19.fasta.gz```, ```ucsc.hg19.fasta.fai.gz``` and ```ucsc.hg19.dict.gz```.
+
+```
+get ucsc.hg19.fasta.gz
+get ucsc.hg19.fasta.fai.gz
+get ucsc.hg19.dict.gz
+
+```
+
+If you want to download all files under a certain folder, you can use ```mirror``` command. 
+
+
+```
+mirror hg19
+
+```
+
+**Reference**
+
+[GATK数据下载](https://blog.csdn.net/xxxie_/article/details/100111991)
+
+[Differences between b37 and hg19](https://github.com/bahlolab/bioinfotools/blob/master/GATK/resource_bundle.md)
 
 
 
