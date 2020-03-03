@@ -105,6 +105,38 @@ So then when you want to run a Picard tool, you just need to call the jar by its
 java -jar $picard <Toolname> [options]
 ```
 
+## Directly download the prepared Human reference files (hg19) from GATK Resource Bundle
+
+After I did all steps above, I found out that the **GATK resource bundle** is a collection of standard files for working with human resequencing data with the GATK. They provide several versions of the bundle corresponding to the various reference builds. So you don't have to build it by your self......
+
+The bundle/ directory contains five subdirectories, one for each build of the human genome that we have resources for: b36, b37, hg18, hg19 and hg38 (aka GRCh38). Here you can go to the hg19 folder and download related files, in our case, ```ucsc.hg19.fasta.gz```, ```ucsc.hg19.fasta.fai.gz``` and ```ucsc.hg19.dict.gz```.
+
+Unzip those files with 
+
+```gunzip XXXX.gz```
+
+
+[GATK Resource Bundle](https://gatk.broadinstitute.org/hc/en-us/articles/360036212652-Resource-Bundle) 
+
+
+**Note:**
+
+1.
+
+FTP Server Access
+
+To access the bundle on the FTP server, use the following login credentials in your favorite FTP client:
+```
+    location: ftp.broadinstitute.org/bundle
+    username: gsapubftp-anonymous
+    password: (none, just hit enter)
+```
+If you use your browser as FTP client, make sure to include the login information in the address, otherwise you will access the general Broad Institute FTP instead of our team FTP. This should work as a direct link:
+ftp://gsapubftp-anonymous@ftp.broadinstitute.org/bundle/
+
+I tried their ways mentioned in [Resource Bundle](https://gatk.broadinstitute.org/hc/en-us/articles/360036212652-Resource-Bundle) above from my web brower to download the reference files, it didn't work for me and kept giving me "This site can’t be reached" error (MacBook Pro + Chrome). I don't know why this is happening or maybe the VPN issue since I was in China. But, at least you can try them first.
+
+2. 
 
 
 
