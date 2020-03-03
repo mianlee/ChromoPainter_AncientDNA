@@ -271,7 +271,7 @@ java -jar GenomeAnalysisTK.jar -T UnifiedGenotyper \
      --allSitePLs \
      --alleles <reference_panel> \
      --genotyping_mode GENOYTPE_GIVEN_ALLELES \
-     --out_mode EMIT_ALL_SITES \
+     --output_mode EMIT_ALL_SITES \
      -R hg19.fasta \
      -I input.bam \
      -o output.vcf
@@ -287,7 +287,7 @@ java -jar GenomeAnalysisTK.jar -T UnifiedGenotyper \
      --allSitePLs \
      --alleles dbsnp_138.b37.vcf \
      --genotyping_mode GENOYTPE_GIVEN_ALLELES \
-     --out_mode EMIT_ALL_SITES \
+     --output_mode EMIT_ALL_SITES \
      -R human_g1k_v37.fasta \
      -I R115.bam \
      -o R115.vcf 
