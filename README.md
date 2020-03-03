@@ -279,3 +279,21 @@ Java -jar GenomeAnalysisTK -T UnifiedGenotyper \
 ```
 
 
+
+```
+Java -jar GenomeAnalysisTK -T UnifiedGenotyper \
+     --genotype_likelihoods_model \
+     --min_base_quality_score 30 \
+     --allSitePLs \
+     --alleles dbsnp_138.b37.vcf \
+     --genotyping_mode GENOYTPE_GIVEN_ALLELES \
+     --out_mode EMIT_ALL_SITES \
+     -R human_g1k_v37.fasta \
+     -I R115.bam \
+     -o R115.vcs 
+
+```
+
+
+
+
