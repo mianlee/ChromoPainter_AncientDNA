@@ -180,6 +180,36 @@ mirror hg19
 [Differences between b37 and hg19](https://github.com/bahlolab/bioinfotools/blob/master/GATK/resource_bundle.md).
 
 
+## GRCh37/hg19/b37
+
+There are some slightly difference between GRCh37,b37 and hg19 human reference. 
+
+
+[GRCh37 hg19 b37 humanG1Kv37 - Human Reference Discrepancies](https://gatk.broadinstitute.org/hc/en-us/articles/360035890711?id=23390#comparison)
+
+For example: 
+
+1.The two versions of the reference genomes are not exactly the same. There are a few differences, for example some bases that are flipped between strands. That is why we have liftover chain files to convert between the two versions. So there may be a few variants that are filtered out in one version relative to the other. But this should affect only a tiny proportion of variants. [Reference](https://gatkforums.broadinstitute.org/gatk/discussion/1810/whats-the-difference-between-b37-and-hg19-resources)
+
+2.There are a few minor differences between GRCh37 and hg19. The contig sequences are the same but the names are different, i.e. "1" may need to be converted to "chr1". In addition UCSC hg19 is currenly using the old mitochondrial sequence but NCBI and Ensembl have transitioned to NC_012920.
+
+Citing UCSC:
+"Since the release of the UCSC hg19 assembly, the Homo sapiens mitochondrion sequence (represented as "chrM" in the Genome Browser) has been replaced in GenBank with the record NC_012920. We have not replaced the original sequence, NC_001807, in the hg19 Genome. We plan to use the Revised Cambridge Reference Sequence (rCRS) in the next human assembly release."
+
+[Reference](https://www.researchgate.net/post/Is_there_any_difference_between_HG_19_from_the_UCSC_and_GRCh37NCBI)
+
+3. GRCh37 is identical to hg19 on the main contigs (chr1-24), but differ on chrM, as per Devon.
+
+GRCh37d5 is different since there is a decoy sequence that may not be present in some hg19 builds. Also if memory serves me GRCh37 with or without decoy hard masks the pseudoautosomal regions on chrY, therefore you treat the pseudoautosomal region on chrX as diploid in males. I do not think some of the hg19 releases (UCSC I think) hardmask the PAR on chrY.Hardmask just means there are "N" nucleotides in that region.
+[Reference](https://www.biostars.org/p/299799/)
+
+
+
+Use different version may cause some issues, I think....
+
+
+
+
 
 ## Genome Analysis Toolkit's (GATK's)
 
