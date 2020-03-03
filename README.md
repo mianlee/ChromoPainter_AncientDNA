@@ -195,7 +195,6 @@ For example:
 
 Citing UCSC:
 "Since the release of the UCSC hg19 assembly, the Homo sapiens mitochondrion sequence (represented as "chrM" in the Genome Browser) has been replaced in GenBank with the record NC_012920. We have not replaced the original sequence, NC_001807, in the hg19 Genome. We plan to use the Revised Cambridge Reference Sequence (rCRS) in the next human assembly release."
-
 [Reference](https://www.researchgate.net/post/Is_there_any_difference_between_HG_19_from_the_UCSC_and_GRCh37NCBI)
 
 3. GRCh37 is identical to hg19 on the main contigs (chr1-24), but differ on chrM, as per Devon.
@@ -205,7 +204,7 @@ GRCh37d5 is different since there is a decoy sequence that may not be present in
 
 
 
-Use different version may cause some issues, I think....
+**Use different version may cause some issues, I think.... I am kind of which reference I should I use to repeat Ancient Rome paper...I need to test this and figure it out**
 
 
 
