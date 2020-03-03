@@ -270,7 +270,7 @@ java -jar GenomeAnalysisTK.jar -T UnifiedGenotyper \
      --min_base_quality_score 30 \
      --allSitePLs \
      --alleles <reference_panel> \
-     --genotyping_mode GENOYTPE_GIVEN_ALLELES \
+     --genotyping_mode GENOTYPE_GIVEN_ALLELES \
      --output_mode EMIT_ALL_SITES \
      -R hg19.fasta \
      -I input.bam \
@@ -286,7 +286,7 @@ java -jar GenomeAnalysisTK.jar -T UnifiedGenotyper \
      --min_base_quality_score 30 \
      --allSitePLs \
      --alleles dbsnp_138.b37.vcf \
-     --genotyping_mode GENOYTPE_GIVEN_ALLELES \
+     --genotyping_mode GENOTYPE_GIVEN_ALLELES \
      --output_mode EMIT_ALL_SITES \
      -R human_g1k_v37.fasta \
      -I R115.bam \
