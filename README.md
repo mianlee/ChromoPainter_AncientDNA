@@ -339,7 +339,7 @@ java.lang.IllegalArgumentException: 1 > 0
 
 ```
 
-I validate my vcf file:
+I validated my vcf file:
 
 ```
 java -jar GenomeAnalysisTK.jar -T ValidateVariants -V dbsnp_138.b37.vcf -R human_g1k_v37.fasta
