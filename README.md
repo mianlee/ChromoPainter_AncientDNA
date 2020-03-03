@@ -113,17 +113,14 @@ The bundle/ directory contains five subdirectories, one for each build of the hu
 
 Unzip those files with 
 
-```gunzip XXXX.gz```
-
-
-[GATK Resource Bundle](https://gatk.broadinstitute.org/hc/en-us/articles/360036212652-Resource-Bundle) 
+```
+gunzip XXXX.gz
+```
 
 
 **Note:**
 
-1.
-
-FTP Server Access
+1. FTP Server Access
 
 To access the bundle on the FTP server, use the following login credentials in your favorite FTP client:
 ```
@@ -140,7 +137,7 @@ I tried their ways mentioned in [Resource Bundle](https://gatk.broadinstitute.or
 
 
 
-2. 
+2. ```lftp``` tool
 
 If the first method doesn't work for you or you need to download those data onto your server, you can use the method below and aftet testing, it worked perfect for me.
 
@@ -152,6 +149,7 @@ lftp ftp://gsapubftp-anonymous@ftp.broadinstitute.org/bundle/
 # There is no password, just hit the enter key
 # gsapubftp-anonymous is the user name, @ftp.broadinstitute.org/bundle/ is the address of the GATK server
 ```
+
 If you connected to the server, you will see something like below. You can use ```cd``` and ```ls``` command to navigate those files and folders.
 
 ![](data/Boundle_terminal)
@@ -175,9 +173,11 @@ mirror hg19
 
 **Reference**
 
-[GATK数据下载](https://blog.csdn.net/xxxie_/article/details/100111991)
+[GATK Resource Bundle](https://gatk.broadinstitute.org/hc/en-us/articles/360036212652-Resource-Bundle).
 
-[Differences between b37 and hg19](https://github.com/bahlolab/bioinfotools/blob/master/GATK/resource_bundle.md)
+[GATK数据下载](https://blog.csdn.net/xxxie_/article/details/100111991).
+
+[Differences between b37 and hg19](https://github.com/bahlolab/bioinfotools/blob/master/GATK/resource_bundle.md).
 
 
 
