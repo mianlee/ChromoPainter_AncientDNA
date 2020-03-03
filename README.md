@@ -274,7 +274,7 @@ java -jar GenomeAnalysisTK.jar -T UnifiedGenotyper \
      --out_mode EMIT_ALL_SITES \
      -R hg19.fasta \
      -I input.bam \
-     -o output.vcs 
+     -o output.vcf
 
 ```
 
@@ -290,7 +290,7 @@ java -jar GenomeAnalysisTK.jar -T UnifiedGenotyper \
      --out_mode EMIT_ALL_SITES \
      -R human_g1k_v37.fasta \
      -I R115.bam \
-     -o R115.vcs 
+     -o R115.vcf 
 
 ```
 
