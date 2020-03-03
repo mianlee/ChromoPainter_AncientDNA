@@ -296,4 +296,74 @@ java -jar GenomeAnalysisTK.jar -T UnifiedGenotyper \
 
 
 
+I am getting the following error:
 
+```
+WARN  22:41:02,479 GenotypingGivenAllelesUtils - Multiple valid VCF records detected in the alleles input file at site 1:77909384, only considering the first record 
+WARN  22:41:02,479 GenotypingGivenAllelesUtils - Multiple valid VCF records detected in the alleles input file at site 1:77909384, only considering the first record 
+WARN  22:41:02,479 GenotypingGivenAllelesUtils - Multiple valid VCF records detected in the alleles input file at site 1:77909384, only considering the first record 
+##### ERROR --
+##### ERROR stack trace 
+java.lang.IllegalArgumentException: 1 > 0
+	at java.util.Arrays.copyOfRange(Arrays.java:3519)
+	at org.broadinstitute.gatk.utils.haplotype.Haplotype.makeHaplotypeListFromAlleles(Haplotype.java:279)
+	at org.broadinstitute.gatk.tools.walkers.genotyper.IndelGenotypeLikelihoodsCalculationModel.getHaplotypeMapFromAlleles(IndelGenotypeLikelihoodsCalculationModel.java:193)
+	at org.broadinstitute.gatk.tools.walkers.genotyper.IndelGenotypeLikelihoodsCalculationModel.getLikelihoods(IndelGenotypeLikelihoodsCalculationModel.java:126)
+	at org.broadinstitute.gatk.tools.walkers.genotyper.UnifiedGenotypingEngine.calculateLikelihoods(UnifiedGenotypingEngine.java:350)
+	at org.broadinstitute.gatk.tools.walkers.genotyper.UnifiedGenotypingEngine.calculateLikelihoodsAndGenotypes(UnifiedGenotypingEngine.java:222)
+	at org.broadinstitute.gatk.tools.walkers.genotyper.UnifiedGenotyper.map(UnifiedGenotyper.java:375)
+	at org.broadinstitute.gatk.tools.walkers.genotyper.UnifiedGenotyper.map(UnifiedGenotyper.java:147)
+	at org.broadinstitute.gatk.engine.traversals.TraverseLociNano$TraverseLociMap.apply(TraverseLociNano.java:267)
+	at org.broadinstitute.gatk.engine.traversals.TraverseLociNano$TraverseLociMap.apply(TraverseLociNano.java:255)
+	at org.broadinstitute.gatk.utils.nanoScheduler.NanoScheduler.executeSingleThreaded(NanoScheduler.java:274)
+	at org.broadinstitute.gatk.utils.nanoScheduler.NanoScheduler.execute(NanoScheduler.java:245)
+	at org.broadinstitute.gatk.engine.traversals.TraverseLociNano.traverse(TraverseLociNano.java:144)
+	at org.broadinstitute.gatk.engine.traversals.TraverseLociNano.traverse(TraverseLociNano.java:92)
+	at org.broadinstitute.gatk.engine.traversals.TraverseLociNano.traverse(TraverseLociNano.java:48)
+	at org.broadinstitute.gatk.engine.executive.LinearMicroScheduler.execute(LinearMicroScheduler.java:98)
+	at org.broadinstitute.gatk.engine.GenomeAnalysisEngine.execute(GenomeAnalysisEngine.java:323)
+	at org.broadinstitute.gatk.engine.CommandLineExecutable.execute(CommandLineExecutable.java:123)
+	at org.broadinstitute.gatk.utils.commandline.CommandLineProgram.start(CommandLineProgram.java:256)
+	at org.broadinstitute.gatk.utils.commandline.CommandLineProgram.start(CommandLineProgram.java:158)
+	at org.broadinstitute.gatk.engine.CommandLineGATK.main(CommandLineGATK.java:108)
+##### ERROR ------------------------------------------------------------------------------------------
+##### ERROR A GATK RUNTIME ERROR has occurred (version 3.8-1-0-gf15c1c3ef):
+##### ERROR
+##### ERROR This might be a bug. Please check the documentation guide to see if this is a known problem.
+##### ERROR If not, please post the error message, with stack trace, to the GATK forum.
+##### ERROR Visit our website and forum for extensive documentation and answers to 
+##### ERROR commonly asked questions https://software.broadinstitute.org/gatk
+##### ERROR
+##### ERROR MESSAGE: 1 > 0
+##### ERROR ------------------------------------------------------------------------------------------
+
+```
+
+I validate my vcf file:
+
+```
+java -jar GenomeAnalysisTK.jar -T ValidateVariants -V dbsnp_138.b37.vcf -R human_g1k_v37.fasta
+```
+
+
+I had the following error:
+
+```
+##### ERROR ------------------------------------------------------------------------------------------
+##### ERROR A USER ERROR has occurred (version 3.8-1-0-gf15c1c3ef): 
+##### ERROR
+##### ERROR This means that one or more arguments or inputs in your command are incorrect.
+##### ERROR The error message below tells you what is the problem.
+##### ERROR
+##### ERROR If the problem is an invalid argument, please check the online documentation guide
+##### ERROR (or rerun your command with --help) to view allowable command-line arguments for this tool.
+##### ERROR
+##### ERROR Visit our website and forum for extensive documentation and answers to 
+##### ERROR commonly asked questions https://software.broadinstitute.org/gatk
+##### ERROR
+##### ERROR Please do NOT post this error to the GATK forum unless you have really tried to fix it yourself.
+##### ERROR
+##### ERROR MESSAGE: File /home/mian_li/ChromoPainter/GATK_analysis/dbsnp_138.b37.vcf fails strict validation: the REF allele is incorrect for the record at position 1:10054, fasta says CTA vs. VCF says CAA
+##### ERROR ------------------------------------------------------------------------------------------
+
+```
