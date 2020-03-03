@@ -265,7 +265,7 @@ I also added ```-glm``` or ```--genotype_likelihoods_model```for  <genotype_like
 
 
 ```
-Java -jar GenomeAnalysisTK.jar -T UnifiedGenotyper \
+java -jar GenomeAnalysisTK.jar -T UnifiedGenotyper \
      --genotype_likelihoods_model \
      --min_base_quality_score 30 \
      --allSitePLs \
@@ -281,7 +281,7 @@ Java -jar GenomeAnalysisTK.jar -T UnifiedGenotyper \
 
 
 ```
-Java -jar GenomeAnalysisTK.jar -T UnifiedGenotyper \
+java -jar GenomeAnalysisTK.jar -T UnifiedGenotyper \
      --genotype_likelihoods_model \
      --min_base_quality_score 30 \
      --allSitePLs \
