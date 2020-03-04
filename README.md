@@ -410,13 +410,60 @@ I figured out ```dbsnp_138.b37.vcf``` also have indels SNPs records.
 1	10493	rs199606420	C	A	.	.	OTHERKG;R5;RS=199606420;RSPOS=10493;SAO=0;SSR=0;VC=SNV;VP=0x050000020001000002000100;WGT=1;dbSNPBuildID=137
 1	10519	rs62636508	G	C	.	.	OTHERKG;R5;RS=62636508;RSPOS=10519;SAO=0;SSR=0;VC=SNV;VP=0x050000020001000002000100;WGT=1;dbSNPBuildID=129
 
+```
+
+This maybe the reason that ```dbsnp_138.b37.vcf``` file doesn't work and will give some errors the ```UnifiedGenotyper``` run. Some suggestions on forum said that you need to separate SNPs variates with indel variates and rerun.
 
 
 ```
+java -jar GenomeAnalysisTK.jar -T UnifiedGenotyper \
+     --genotype_likelihoods_model SNP \
+     --min_base_quality_score 30 \
+     --allSitePLs \
+     --alleles dbsnp_138.b37.vcf \
+     --genotyping_mode GENOTYPE_GIVEN_ALLELES \
+     --output_mode EMIT_ALL_SITES \
+     -R human_g1k_v37.fasta \
+     -I R115.bam \
+     -o R115.vcf 
+```
 
 
-I then tried:
 
+I downloaded ```1000G_phase1.snps.high_confidence.b37.vcf``` file, because it only contains SNP variations and do the vcf validation.
+
+```
+java -jar GenomeAnalysisTK.jar -T ValidateVariants -V 1000G_phase1.snps.high_confidence.b37.vcf -R human_g1k_v37.fasta
+```
+
+It still gave me the errors:
+
+```
+##### ERROR ------------------------------------------------------------------------------------------
+##### ERROR A USER ERROR has occurred (version 3.8-1-0-gf15c1c3ef): 
+##### ERROR
+##### ERROR This means that one or more arguments or inputs in your command are incorrect.
+##### ERROR The error message below tells you what is the problem.
+##### ERROR
+##### ERROR If the problem is an invalid argument, please check the online documentation guide
+##### ERROR (or rerun your command with --help) to view allowable command-line arguments for this tool.
+##### ERROR
+##### ERROR Visit our website and forum for extensive documentation and answers to 
+##### ERROR commonly asked questions https://software.broadinstitute.org/gatk
+##### ERROR
+##### ERROR Please do NOT post this error to the GATK forum unless you have really tried to fix it yourself.
+##### ERROR
+##### ERROR MESSAGE: File /home/mian_li/ChromoPainter/GATK_analysis/1000G_phase1.snps.high_confidence.b37.vcf fails strict validation: the AC tag has the incorrect number of records at position 1:768589, 1 vs. 2
+##### ERROR ------------------------------------------------------------------------------------------
+```
+
+I check position 1:768589 in the vcf file:
+
+
+```
+1	768589	.	A	C,G	76	PASS	AC=1;AF=0.00047;AN=2120;BaseQRankSum=-0.601;DP=6356;Dels=0.00;FS=0.000;HRun=1;HaplotypeScore=0.2531;InbreedingCoeff=-0.0399;MQ=52.48;MQ0=231;MQRankSum=1.460;QD=7.76;ReadPosRankSum=0.795;SB=-27.72;VQSLOD=5.4055;pop=ALL
+```
+It has two alternate alleles C,G, But AC tag = 1.....This is their annotation errors. I think it won't affect the variation calling for from ```.bam``` file. So I tried run this again:
 
 ```
 java -jar GenomeAnalysisTK.jar -T UnifiedGenotyper \
@@ -431,3 +478,23 @@ java -jar GenomeAnalysisTK.jar -T UnifiedGenotyper \
      -o R115.vcf 
 
 ```
+
+And it worked, but when I check the ```R115.vcf``` file, in the ID column, it doesn't contain ```rs ID``` (not get annotated), so I tried the following command on ```sample R116```, with extra ```-dbSNP 1000G_phase1.snps.high_confidence.b37.vcf``` argument.
+
+
+```
+java -jar GenomeAnalysisTK.jar -T UnifiedGenotyper \
+     --genotype_likelihoods_model SNP \
+     --min_base_quality_score 30 \
+     --allSitePLs \
+     --alleles 1000G_phase1.snps.high_confidence.b37.vcf \
+     -dbSNP 1000G_phase1.snps.high_confidence.b37.vcf
+     --genotyping_mode GENOTYPE_GIVEN_ALLELES \
+     --output_mode EMIT_ALL_SITES \
+     -R human_g1k_v37.fasta \
+     -I R116.bam \
+     -o R116.vcf 
+
+```
+
+
