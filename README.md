@@ -488,7 +488,7 @@ java -jar GenomeAnalysisTK.jar -T UnifiedGenotyper \
      --min_base_quality_score 30 \
      --allSitePLs \
      --alleles 1000G_phase1.snps.high_confidence.b37.vcf \
-     -dbSNP 1000G_phase1.snps.high_confidence.b37.vcf \
+     --dbSNP 1000G_phase1.snps.high_confidence.b37.vcf \
      --genotyping_mode GENOTYPE_GIVEN_ALLELES \
      --output_mode EMIT_ALL_SITES \
      -R human_g1k_v37.fasta \
