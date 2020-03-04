@@ -497,4 +497,5 @@ java -jar GenomeAnalysisTK.jar -T UnifiedGenotyper \
 
 ```
 
+It worked, the ID column now contains the ```rs ID``` annotations.
 
