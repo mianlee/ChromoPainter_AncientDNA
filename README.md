@@ -479,7 +479,7 @@ java -jar GenomeAnalysisTK.jar -T UnifiedGenotyper \
 
 ```
 
-And it worked, but when I check the ```R115.vcf``` file, in the ID column, it doesn't contain ```rs ID``` (not get annotated), so I tried the following command on ```sample R116```, with extra ```-dbSNP 1000G_phase1.snps.high_confidence.b37.vcf``` argument.
+And it worked, but when I check the ```R115.vcf``` file, in the ID column, it doesn't contain ```rs ID``` (not get annotated), so I tried the following command on ```sample R116```, with extra ```-dbsnp 1000G_phase1.snps.high_confidence.b37.vcf``` argument.
 
 
 ```
@@ -488,7 +488,7 @@ java -jar GenomeAnalysisTK.jar -T UnifiedGenotyper \
      --min_base_quality_score 30 \
      --allSitePLs \
      --alleles 1000G_phase1.snps.high_confidence.b37.vcf \
-     --dbSNP 1000G_phase1.snps.high_confidence.b37.vcf \
+     --dbsnp 1000G_phase1.snps.high_confidence.b37.vcf \
      --genotyping_mode GENOTYPE_GIVEN_ALLELES \
      --output_mode EMIT_ALL_SITES \
      -R human_g1k_v37.fasta \
