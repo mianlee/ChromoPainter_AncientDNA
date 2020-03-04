@@ -479,7 +479,29 @@ java -jar GenomeAnalysisTK.jar -T UnifiedGenotyper \
 
 ```
 
-And it worked, but when I check the ```R115.vcf``` file, in the ID column, it doesn't contain ```rs ID``` (not get annotated), so I tried the following command on ```sample R116```, with extra ```-dbsnp 1000G_phase1.snps.high_confidence.b37.vcf``` argument.
+And it worked, but when I checked the ```R115.vcf``` file, in the ID column, it didn't contain ```rs ID``` (not get annotated), so I tried the following command on ```sample R116```, with extra ```-dbsnp 1000G_phase1.snps.high_confidence.b37.vcf``` argument.
+
+
+```
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	RMPR-115
+.
+.
+.
+.
+1	256022	.	A	G	.	.	.	GT	./.
+1	259207	.	A	C	.	.	.	GT	./.
+1	526735	.	C	T	0	LowQual	AC=0;AF=0.00;AN=2;DP=3;Dels=0.00;ExcessHet=3.0103;FS=0.000;HaplotypeScore=0.0000;MLEAC=0;MLEAF=0.00;MQ=37.00;MQ0=0;SOR=0.368	GT:AD:APL:DP:GQ:PL	0/0:3,0:119,9,0,119,9,119,119,9,119,119:3:9:0,9,119
+1	533162	.	C	T	0	LowQual	AC=0;AF=0.00;AN=2;DP=1;Dels=0.00;ExcessHet=3.0103;FS=0.000;HaplotypeScore=0.0000;MLEAC=0;MLEAF=0.00;MQ=37.00;MQ0=0;SOR=0.223	GT:AD:APL:DP:GQ:PL	0/0:1,0:40,3,0,40,3,40,40,3,40,40:1:3:0,3,40
+1	601583	.	G	A	.	.	.	GT	./.
+1	704637	.	G	A	.	.	.	GT	./.
+1	705882	.	G	A	0	LowQual	AC=0;AF=0.00;AN=2;DP=1;Dels=0.00;ExcessHet=3.0103;FS=0.000;HaplotypeScore=0.0000;MLEAC=0;MLEAF=0.00;MQ=37.00;MQ0=0;SOR=0.223	GT:AD:APL:DP:GQ:PL	0/0:1,0:40,40,40,3,3,0,40,40,3,40:1:3:0,3,40
+1	712583	.	T	C	0	LowQual	AC=0;AF=0.00;AN=2;DP=2;Dels=0.00;ExcessHet=3.0103;FS=0.000;HaplotypeScore=0.0000;MLEAC=0;MLEAF=0.00;MQ=37.00;MQ0=0;SOR=0.693	GT:AD:APL:DP:GQ:PL	0/0:2,0:80,80,80,80,80,80,6,6,6,0:2:6:0,6,80
+1	713092	.	G	A	.	.	.	GT	./.
+1	713158	.	T	A	.	.	.	GT	./.
+
+
+
+```
 
 
 ```
@@ -497,5 +519,21 @@ java -jar GenomeAnalysisTK.jar -T UnifiedGenotyper \
 
 ```
 
+
+
+
 It worked, the ID column now contains the ```rs ID``` annotations.
 
+
+
+```
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	RMPR-116
+1	51479	rs116400033	T	A	.	.	DB	GT	./.
+1	55367	.	G	A	.	.	DB	GT	./.
+1	55388	.	C	T	.	.	DB	GT	./.
+1	55852	.	G	C	0	LowQual	AC=0;AF=0.00;AN=2;DB;DP=3;Dels=0.00;ExcessHet=3.0103;FS=0.000;HaplotypeScore=0.0000;MLEAC=0;MLEAF=0.00;MQ=33.48;MQ0=0;SOR=0.061	GT:AD:APL:DP:GQ:PL	0/0:3,0:80,80,80,6,6,0,80,80,6,80:3:6:0,6,80
+1	61462	rs56992750	T	A	.	.	DB	GT	./.
+1	62157	rs10399597	G	A	.	.	DB	GT	./.
+1	82609	.	C	G	0	LowQual	AC=0;AF=0.00;AN=2;DB;DP=2;Dels=0.00;ExcessHet=3.0103;FS=0.000;HaplotypeScore=0.0000;MLEAC=0;MLEAF=0.00;MQ=37.00;MQ0=0;SOR=0.693	GT:AD:APL:DP:GQ:PL	0/0:2,0:80,6,0,80,6,80,80,6,80,80:2:6:0,6,80
+
+```
