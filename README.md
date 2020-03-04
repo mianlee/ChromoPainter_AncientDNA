@@ -479,8 +479,7 @@ java -jar GenomeAnalysisTK.jar -T UnifiedGenotyper \
 
 ```
 
-And it worked, but when I checked the ```R115.vcf``` file, in the ID column, it didn't contain ```rs ID``` (not get annotated), so I tried the following command on ```sample R116```, with extra ```-dbsnp 1000G_phase1.snps.high_confidence.b37.vcf``` argument.
-
+And it worked, but when I checked the ```R115.vcf``` file, in the ID column, it didn't contain ```rs ID``` (not get annotated), as it shown in below:
 
 ```
 #CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	RMPR-115
@@ -503,6 +502,8 @@ And it worked, but when I checked the ```R115.vcf``` file, in the ID column, it 
 
 ```
 
+So I tried the following command on ```sample R116```, with extra ```-dbsnp 1000G_phase1.snps.high_confidence.b37.vcf``` argument.
+
 
 ```
 java -jar GenomeAnalysisTK.jar -T UnifiedGenotyper \
@@ -519,11 +520,7 @@ java -jar GenomeAnalysisTK.jar -T UnifiedGenotyper \
 
 ```
 
-
-
-
 It worked, the ID column now contains the ```rs ID``` annotations.
-
 
 
 ```
