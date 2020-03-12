@@ -632,6 +632,13 @@ java -jar picard.jar MergeVcfs \
 
 
 
+```
+java -jar picard.jar MergeVcfs \
+          I=chr1.1kg.phase3.v5a.vcf.gz \
+          I=chr2.1kg.phase3.v5a.vcf.gz \
+          O=output_variants.vcf.gz
 
+
+```
 
 
