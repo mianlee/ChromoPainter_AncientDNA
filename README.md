@@ -534,3 +534,104 @@ It worked, the ID column now contains the ```rs ID``` annotations.
 1	82609	.	C	G	0	LowQual	AC=0;AF=0.00;AN=2;DB;DP=2;Dels=0.00;ExcessHet=3.0103;FS=0.000;HaplotypeScore=0.0000;MLEAC=0;MLEAF=0.00;MQ=37.00;MQ0=0;SOR=0.693	GT:AD:APL:DP:GQ:PL	0/0:2,0:80,6,0,80,6,80,80,6,80,80:2:6:0,6,80
 
 ```
+
+
+
+
+### --allele vcf file
+
+As **Xiaowei Mao** suggested the ```--aalele```  vcf file could use the ```1000_Genomes_phase3_v5a/b37.vcf```. Here I showed how to make this file.
+
+You can download the vcf files for each chromsome at BEAGLE official website: http://bochet.gcc.biostat.washington.edu/beagle/1000_Genomes_phase3_v5a/b37.vcf/ , and then combine those vcf files together.
+
+
+
+If you are running GATK then you are likely using PicardTools.
+
+PicardsTools includes a program called MergeVcfs which should do exactly what you want
+
+-
+
+Here are the usage examples from the GATK [website](https://gatk.broadinstitute.org/hc/en-us/articles/360037226612-MergeVcfs-Picard-):
+
+Example 1: We combine several variant files in different formats, where at least one of them contains the contig list in its header.
+
+```
+java -jar picard.jar MergeVcfs \
+          I=input_variants.01.vcf \
+          I=input_variants.02.vcf.gz \
+          O=output_variants.vcf.gz
+```
+
+Example 2: Similar to example 1 but we use an input list file to specify the input files:
+
+```
+java -jar picard.jar MergeVcfs \
+          I=input_variant_files.list \
+          O=output_variants.vcf.gz
+```
+
+
+Here are all codes:
+
+
+```
+
+for i in {1..22}; do wget http://bochet.gcc.biostat.washington.edu/beagle/1000_Genomes_phase3_v5a/b37.vcf/chr$i.1kg.phase3.v5a.vcf.gz.tbi
+; done
+
+```
+
+
+```
+for i in {1..22}; do wget 
+http://bochet.gcc.biostat.washington.edu/beagle/1000_Genomes_phase3_v5a/b37.vcf/chr$i.1kg.phase3.v5a.vcf.gz.tbi
+done
+
+```
+
+
+
+```
+nano input_files.list
+
+chr1.1kg.phase3.v5a.vcf.gz
+chr2.1kg.phase3.v5a.vcf.gz
+chr3.1kg.phase3.v5a.vcf.gz
+chr4.1kg.phase3.v5a.vcf.gz
+chr5.1kg.phase3.v5a.vcf.gz
+chr6.1kg.phase3.v5a.vcf.gz
+chr7.1kg.phase3.v5a.vcf.gz
+chr8.1kg.phase3.v5a.vcf.gz
+chr9.1kg.phase3.v5a.vcf.gz
+chr10.1kg.phase3.v5a.vcf.gz
+chr11.1kg.phase3.v5a.vcf.gz
+chr12.1kg.phase3.v5a.vcf.gz
+chr13.1kg.phase3.v5a.vcf.gz
+chr14.1kg.phase3.v5a.vcf.gz
+chr15.1kg.phase3.v5a.vcf.gz
+chr16.1kg.phase3.v5a.vcf.gz
+chr17.1kg.phase3.v5a.vcf.gz
+chr18.1kg.phase3.v5a.vcf.gz
+chr19.1kg.phase3.v5a.vcf.gz
+chr20.1kg.phase3.v5a.vcf.gz
+chr21.1kg.phase3.v5a.vcf.gz
+chr22.1kg.phase3.v5a.vcf.gz
+
+```
+
+
+```
+
+java -jar picard.jar MergeVcfs \
+          I=input_files.list \
+          O=1kg.phase3.v5a.vcf.gz
+	  
+```
+
+
+
+
+
+
+
