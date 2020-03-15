@@ -671,6 +671,30 @@ java -jar picard.jar MergeVcfs \
 
 
 
+```
+
+
+java -jar picard.jar MergeVcfs \
+          I=R115.vcf \
+          I=R116.vcf \
+	  D=human_g1k_v37.dict \
+          O=Roman.vcf
+
+
+```
+
+
+
+```
+
+java -jar picard.jar MergeVcfs \
+          I=R115.vcf \
+          I=R116.vcf \
+          O=Roman.vcf
+```
+
+
+
 
 
 
