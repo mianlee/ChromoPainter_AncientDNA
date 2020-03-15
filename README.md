@@ -799,6 +799,8 @@ java \
 -jar beagle.4.1.jar \
 ref=chr1.1kg.phase3.v5a.b37.bref3 \
 map=plink.chr01.GRCh37.map \
+gprobs=true \
+impute=true \
 gl=R116.vcf \
 out=R116.4.1.gl
 ```
