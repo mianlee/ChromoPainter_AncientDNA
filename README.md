@@ -758,7 +758,51 @@ ref=chr1.1kg.phase3.v5a.b37.bref3 \
 map=plink.chr01.GRCh37.map \
 gt=R116.vcf \
 out=R116
+```
 
 
 
 ```
+java -Xmx100G -jar GenomeAnalysisTK.jar -T UnifiedGenotyper \
+     --genotype_likelihoods_model SNP \
+     --min_base_quality_score 30 \
+     --allSitePLs \
+     --alleles 1000G_phase1.snps.high_confidence.b37.vcf \
+     --dbsnp 1000G_phase1.snps.high_confidence.b37.vcf \
+     --genotyping_mode GENOTYPE_GIVEN_ALLELES \
+     --output_mode EMIT_ALL_SITES \
+     -R human_g1k_v37.fasta \
+     -I bam.list \
+     -o R115_R116.vcf 
+```
+
+
+
+
+
+```
+java \
+-jar beagle.4.1.jar \
+ref=1kg.phase3.v5a.vcf.gz \
+map=GRCh37.map \
+gl=R116.vcf \
+out=R116.Beagle
+```
+
+
+
+
+
+
+```
+java \
+-jar beagle.4.1.jar \
+ref=chr1.1kg.phase3.v5a.b37.bref3 \
+map=plink.chr01.GRCh37.map \
+gl=R116.vcf \
+out=R116.4.1.gl
+```
+
+
+
+
