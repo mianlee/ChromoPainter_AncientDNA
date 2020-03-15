@@ -709,3 +709,19 @@ java -jar GenomeAnalysisTK.jar -T HaplotypeCaller \
 
 ```
 
+
+
+
+```
+java -jar GenomeAnalysisTK.jar -T HaplotypeCaller \
+     --min_base_quality_score 30 \
+     --allSitePLs \
+     --alleles 1000G_phase1.snps.high_confidence.b37.vcf \
+     --output_mode EMIT_ALL_SITES \
+     -R human_g1k_v37.fasta \
+     --emitRefConfidence GVCF \
+     -I R116.bam \
+     -o R116.g.vcf
+
+```
+
