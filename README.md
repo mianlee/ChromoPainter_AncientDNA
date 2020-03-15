@@ -696,7 +696,16 @@ java -jar picard.jar MergeVcfs \
 
 
 
+```
+java -jar GenomeAnalysisTK.jar -T HaplotypeCaller \
+     --min_base_quality_score 30 \
+     --allSitePLs \
+     --alleles 1000G_phase1.snps.high_confidence.b37.vcf \
+     --output_mode EMIT_ALL_SITES \
+     -R human_g1k_v37.fasta \
+     --emitRefConfidence GVCF \
+     -I R115.bam \
+     -o R115.g.vcf
 
-
-
+```
 
