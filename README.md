@@ -725,3 +725,24 @@ java -jar GenomeAnalysisTK.jar -T HaplotypeCaller \
 
 ```
 
+
+
+
+
+
+
+
+
+## Combine vcfs
+
+
+```
+java -jar GenomeAnalysisTK.jar -T CombineVariants \
+-R human_g1k_v37.fasta \
+-genotypeMergeOptions UNIQUIFY \
+--variant R115.vcf \
+--variant R116.vcf \
+-o Roman_merge.vcf
+
+```
+
