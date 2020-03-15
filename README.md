@@ -650,6 +650,7 @@ chr22.1kg.phase3.v5a.vcf.gz
 
 java -jar picard.jar MergeVcfs \
           I=input_files.list \
+	  D=human_g1k_v37.dict \
           O=1kg.phase3.v5a.vcf.gz
 	  
 ```
@@ -663,8 +664,15 @@ java -jar picard.jar MergeVcfs \
           I=chr2.1kg.phase3.v5a.vcf.gz \
 	  D=human_g1k_v37.dict \
           O=output_variants.vcf.gz
-
-
 ```
+
+
+
+
+
+
+
+
+
 
 
