@@ -746,3 +746,19 @@ java -jar GenomeAnalysisTK.jar -T CombineVariants \
 
 ```
 
+
+
+## BEAGlE
+
+
+```
+java \
+-jar beagle.25Nov19.28d.jar \
+ref=chr1.1kg.phase3.v5a.b37.bref3 \
+map=plink.chr01.GRCh37.map \
+gt=R116.vcf \
+out=R116
+
+
+
+```
