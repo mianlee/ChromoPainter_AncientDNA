@@ -862,5 +862,36 @@ java -Xmx100G -jar GenomeAnalysisTK.jar -T UnifiedGenotyper \
 
 
 
+```
+java -Xmx100G -jar GenomeAnalysisTK.jar -T UnifiedGenotyper \
+     --genotype_likelihoods_model SNP \
+     --min_base_quality_score 30 \
+     --allSitePLs \
+     --alleles 1000G_phase1.snps.high_confidence.b37.vcf \
+     --dbsnp 1000G_phase1.snps.high_confidence.b37.vcf \
+     --genotyping_mode GENOTYPE_GIVEN_ALLELES \
+     --output_mode EMIT_VARIANTS_ONLY \
+     -R human_g1k_v37.fasta \
+     -L 1 \
+     -I bam.list \
+     -o Roman1.vcf.gz &
+
+```
+
+
+
+```
+
+java -jar beagle.4.1.jar \
+ref=chr1.1kg.phase3.v5a.vcf.gz \
+map=plink.chr01.GRCh37.map \
+gprobs=true \
+impute=true \
+gl=Roman1.vcf \
+out=Roman1.gl.vcf &
+
+
+```
+
 
 
