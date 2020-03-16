@@ -881,15 +881,14 @@ java -Xmx100G -jar GenomeAnalysisTK.jar -T UnifiedGenotyper \
 
 
 ```
-
 java -jar beagle.4.1.jar \
 ref=chr1.1kg.phase3.v5a.vcf.gz \
 map=plink.chr01.GRCh37.map \
 gprobs=true \
 impute=true \
+chrom=1 \
 gl=Roman1.vcf \
-out=Roman1.gl.vcf &
-
+out=Roman1.gl &
 
 ```
 
