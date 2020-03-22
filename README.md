@@ -894,3 +894,32 @@ out=Roman1.gl &
 
 
 
+
+```
+java -jar beagle.r1399.jar \
+ref=chr1.1kg.phase3.v5a.vcf.gz \
+map=plink.chr01.GRCh37.map \
+gprobs=true \
+impute=true \
+chrom=1 \
+gl=Roman1.vcf \
+out=Roman1.gl &
+
+```
+
+
+
+
+```
+java \
+-jar beagle.25Nov19.28d.jar \
+ref=chr1.1kg.phase3.v5a.b37.bref3 \
+map=plink.chr01.GRCh37.map \
+gt=R115_R116.vcf \
+out=R115_R116_5_1
+```
+
+
+
+
+
